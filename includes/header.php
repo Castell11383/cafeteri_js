@@ -13,7 +13,6 @@
     body {
         background-image: url('/cafeteria_js/src/images/fondo.jpg');
         background-size: cover;
-        background-repeat: no-repeat;
         background-position: center center;
         height: 100vh;
         margin: 0;

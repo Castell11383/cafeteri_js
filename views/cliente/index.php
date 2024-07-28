@@ -17,8 +17,8 @@
                 </div>
                 <div class="col-3">
                     <label for="cliente_genero">Género</label>
-                    <select name="cliente_genero" id="cliente_genero" class="form-control" required>
-                        <option value="">Seleccione una opción</option>
+                    <select name="cliente_genero" id="cliente_genero" class="form-select" aria-label="Default select example" required>
+                        <option value="">Select</option>
                         <option value="Masculino">Masculino</option>
                         <option value="Femenino">Femenino</option>
                     </select>
@@ -38,7 +38,7 @@
 
             <div class="row justify-content-center mb-3">
                 <div class="col">
-                    <button type="submit" id="btnGuardar" class="btn btn-info w-100"><i class="bi bi-floppy-fill"></i> Registrar</button>
+                    <button type="submit" id="btnGuardar" class="btn btn-primary w-100"><i class="bi bi-floppy-fill"></i> Registrar</button>
                 </div>
                 <div class="col">
                     <button type="button" id="btnBuscar" class="btn btn-warning w-100"><i class="bi bi-binoculars-fill"></i> Buscar</button>
@@ -60,7 +60,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-8 table-responsive">
                 <h2 class="text-center">Listado de Clientes</h2>
-                <table class="table table-bordered table-hover border-dark" id="tablaClientes">
+                <table class="table table-bordered table-hover border-dark table-striped " id="tablaClientes">
                     <thead class="text-center table-dark">
                         <tr>
                             <th>No.</th>

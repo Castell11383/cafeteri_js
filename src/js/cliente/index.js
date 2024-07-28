@@ -9,13 +9,13 @@ const formulario = document.querySelector('form')
 btnModificar.parentElement.style.display = 'none'
 btnCancelar.parentElement.style.display = 'none'
 
-const getCliente = async (alerta='si') => {
+const getCliente = async (alerta = 'si') => {
     const nombre = formulario.cliente_nombre.value
     const apellido = formulario.cliente_apellido.value
     const genero = formulario.cliente_genero.value
     const correo = formulario.cliente_correo.value
     const telefono = formulario.cliente_genero.value
-    const url = `/cafeteria_js/controllers/cliente/index.php?cliente_nombre=${nombre}&cliente_apellido=${apellido}&cliente_genero=${genero}&cliente_correo=${correo}&cliente_telefono=${apellido}`
+    const url = `/cafeteria_js/controllers/cliente/index.php?cliente_nombre=${nombre}&cliente_apellido=${apellido}&cliente_genero=${genero}&cliente_correo=${correo}&cliente_telefono=${telefono}`
     const config = {
         method: 'GET'
     }
@@ -29,12 +29,12 @@ const getCliente = async (alerta='si') => {
         let contador = 1;
         // console.log(data);
         if (respuesta.status == 200) {
-            if(alerta == 'si'){
+            if (alerta == 'si') {
                 Swal.mixin({
                     toast: true,
                     position: "top-end",
                     showConfirmButton: false,
-                    timer: 2000,
+                    timer: 3000,
                     timerProgressBar: true,
                     icon: "success",
                     title: 'Clientes encontrados',
@@ -44,7 +44,7 @@ const getCliente = async (alerta='si') => {
                     }
                 }).fire();
             }
-           
+
 
             if (data.length > 0) {
                 data.forEach(cliente => {
@@ -132,7 +132,7 @@ const guardarClientes = async (e) => {
             toast: true,
             position: "top-end",
             showConfirmButton: false,
-            timer: 2000,
+            timer: 3000,
             timerProgressBar: true,
             icon: "success",
             title: mensaje,
@@ -141,10 +141,9 @@ const guardarClientes = async (e) => {
                 toast.onmouseleave = Swal.resumeTimer
             }
         }).fire()
-        alert(mensaje)
         if (codigo == 1 && respuesta.status == 200) {
             formulario.reset()
-            getCliente(alerta='no');
+            getCliente(alerta = 'no');
         } else {
             console.log(detalle)
         }
@@ -198,7 +197,7 @@ const ModificarClientes = async (e) => {
             toast: true,
             position: "top-end",
             showConfirmButton: false,
-            timer: 2000,
+            timer: 3000,
             timerProgressBar: true,
             icon: "success",
             title: mensaje,
@@ -207,10 +206,9 @@ const ModificarClientes = async (e) => {
                 toast.onmouseleave = Swal.resumeTimer
             }
         }).fire()
-        alert(mensaje)
         if (codigo == 2 && respuesta.status == 200) {
             formulario.reset()
-            getCliente(alerta='no');
+            getCliente(alerta = 'no');
             btnModificar.parentElement.style.display = 'none'
             btnCancelar.parentElement.style.display = 'none'
             btnGuardar.parentElement.style.display = ''
@@ -238,10 +236,9 @@ const cancelar = () => {
 
 //ELIMINAR
 
- const EliminarClientes = async (cliente) => {
+const EliminarClientes = async (cliente) => {
 
     console.log(cliente)
-
     const url = '/cafeteria_js/controllers/cliente/index.php'
     const formData = new FormData(formulario)
     // console.log(formulario);
@@ -261,7 +258,7 @@ const cancelar = () => {
             toast: true,
             position: "top-end",
             showConfirmButton: false,
-            timer: 2000,
+            timer: 3000,
             timerProgressBar: true,
             icon: "success",
             title: mensaje,
@@ -270,10 +267,9 @@ const cancelar = () => {
                 toast.onmouseleave = Swal.resumeTimer
             }
         }).fire()
-        alert(mensaje)
         if (codigo == 3 && respuesta.status == 200) {
             formulario.reset()
-            getCliente(alerta='no');
+            getCliente(alerta = 'no');
             btnModificar.parentElement.style.display = 'none'
             btnCancelar.parentElement.style.display = 'none'
             btnGuardar.parentElement.style.display = ''
@@ -294,5 +290,5 @@ getCliente();
 
 formulario.addEventListener('submit', guardarClientes)
 btnModificar.addEventListener('click', ModificarClientes)
-btnBuscar.addEventListener('click',() => { getCliente(alerta='si') } )
+btnBuscar.addEventListener('click', () => { getCliente(alerta = 'si') })
 btnCancelar.addEventListener('click', cancelar)
