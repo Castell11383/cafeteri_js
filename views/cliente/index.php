@@ -47,7 +47,7 @@
                     <button type="button" id="btnModificar" class="btn btn-warning w-100"><i class="bi bi-back"></i> Modificar</button>
                 </div>
                 <div class="col">
-                    <button type="button" id="btnCancelar" class="btn btn-primary w-100"><i class="bi bi-x-octagon-fill"></i> Cancelar</button>
+                    <button type="button" id="btnCancelar" class="btn btn-info w-100"><i class="bi bi-x-octagon-fill"></i> Cancelar</button>
                 </div>
                 <div class="col">
                     <button type="reset" id="btnLimpiar" class="btn btn-success w-100"><i class="bi bi-stars"></i> Limpiar</button>
